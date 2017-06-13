@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocalización</title>
+</head>
+<body>
+    <script>
+        // Comprobamos que la API de geolocalización está disponible.
+        if (navigator.geolocation) {
+            // Obtenemos la posición del usuario.
+            navigator.geolocation.getCurrentPosition(
+                // Si todo ha ido bien.
+                (datos) => {
+                    console.log(datos);
+                },
+                // Si se ha producido un error.
+                (error) => {
+                    console.error(error);
+                }
+            );
+        }
+        // Si no está disponible la geolocalización.
+        else {
+            console.log("El navegador no soporta geolocalización");
+        }
+    </script>
+</body>
+</html>
