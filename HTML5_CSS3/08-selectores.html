@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectores</title>
+    <style>
+        /* Selección por valr de un atributo */
+        a[href^="nove"] {
+            color: red;
+        }
+        a[href$="vistas"] {
+            color: green;
+        }
+        a[href*="w"] {
+            color: deeppink;
+        }
+        p::first-line {
+            color: purple;
+        }
+        p::first-letter {
+            font-size: 32px;
+        }
+        p::selection {
+            background: deeppink;
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="novedades">Novedades</a>
+        <a href="entrevistas">Entrevistas</a>
+        <a href="reviews">Reviews</a>
+    </nav>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis voluptates similique aperiam. Suscipit id eligendi ducimus. Nam, eveniet accusantium quod odio, doloribus aliquid quae sequi ducimus voluptatum in, modi vel laudantium facilis cupiditate nesciunt perferendis rerum. Ducimus maxime nulla ratione quidem sed labore omnis saepe temporibus doloribus, culpa in consequatur!</p>
+</body>
+</html>
