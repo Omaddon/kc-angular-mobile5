@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Animaciones</title>
+    <style>
+        @keyframes cajaBailonga{
+            0% {
+                background-color: deeppink;
+            }
+            50% {
+                transform: scale(2);
+                transform: rotate(45deg);
+                background-color:chartreuse;
+            }
+            100% {
+                transform: scale(1);
+                background-color:dimgrey;
+            }
+        }
+
+        .caja {
+            width: 200px;
+            height: 200px;
+            animation: cajaBailonga 5s;
+            background-color: dimgrey;
+        }
+    </style>
+</head>
+<body>
+    <div class="caja"></div>
+</body>
+</html>
