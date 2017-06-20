@@ -6,31 +6,35 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ContactosService {
 
-private _contactos: string[];
+  private _contactos: string[];
 
-constructor() {
-  this._contactos = [
-    'Tim Cook',
-    'Bill Gates',
-    'Elon Musk',
-    'Steve Wozniak',
-    'Sundar Pichai'
-  ];
-}
+  constructor() {
+    this._contactos = [
+      'Tim Cook',
+      'Bill Gates',
+      'Elon Musk',
+      'Steve Wozniak',
+      'Sundar Pichai'
+    ];
+  }
 
-// Al ser privado _contactos, debemos exponerla de alguna forma
-obtenerContactos(): string[] {
-  return this._contactos;
-}
+  // Al ser privado _contactos, debemos exponerla de alguna forma
+  obtenerContactos(): string[] {
+    return this._contactos;
+  }
 
-eliminarContacto(contacto) {
-  let posicion = this._contactos.indexOf(contacto);
-  this._contactos.splice(posicion, 1);
+  eliminarContacto(contacto) {
+    let posicion = this._contactos.indexOf(contacto);
+    this._contactos.splice(posicion, 1);
 
-  // Otra forma de hacerlo:
-  // this._contactos = this._contactos.filter((c) => {
-  //   return c !== contacto;
-  // });
-}
+    // Otra forma de hacerlo:
+    // this._contactos = this._contactos.filter((c) => {
+    //   return c !== contacto;
+    // });
+  }
+
+  agregarContacto(contacto) {
+    this._contactos.push(contacto);
+  }
 
 }

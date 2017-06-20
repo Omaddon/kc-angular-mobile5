@@ -1,0 +1,19 @@
+
+<!-- Para trabajar con formularios necesitamos hacer uso de la directiva 'ngForm'.
+Para obtener la referencia de la instancia 'FormGroup' del formulario, usamos un
+template reference variable, al cual asignamos como valor la propia directiva 'ngForm'. -->
+<form ngForm #formularioContacto="ngForm" (ngSubmit)="notificarContacto(formularioContacto)">
+
+  <!-- Para trabajar con elementos del formulario, necesitamos hacer uso de la directiva 'ngModel'.
+  Para obtener la referencia a la instancia 'FormControl' del elemento, usamos un template
+  reference variable, al cual asignamos como valor la propia directiva 'ngModel'. -->
+  <input
+    type="text"
+    ngModel
+    name="nombre"
+    #nombreRef="ngModel">
+
+  <!-- -->
+  <button type="submit">Guardar contacto</button>
+
+</form>
