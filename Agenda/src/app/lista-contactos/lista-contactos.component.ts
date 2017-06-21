@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Contacto } from '../contacto';
 
 @Component({
   selector: 'lista-contactos',
@@ -9,9 +10,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class ListaContactosComponent {
 
   // En esta variable nuestro padre nos dejará datos.
-  @Input() datos: string[];
+  @Input() datos: Contacto[];
 
-  @Output() clickEnEliminar = new EventEmitter<string>();
+  @Output() clickEnEliminar = new EventEmitter<Contacto>();
 
   // Vamos a enviar cosas al padre (mediante eventos).
   notificarEliminacion(dato) {

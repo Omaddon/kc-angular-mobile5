@@ -8,7 +8,7 @@
 <ul>
   <!-- Con la directiva *ngFor iteramos sobre una colección. Relica. -->
   <li *ngFor="let contacto of datos">
-    {{ contacto }}
+    {{ contacto.nombre }}
     <!-- Para hacer suscripciones a eventos, envolvemos con paréntesis.
     Tenemos que asociar además un manejador. Si queremos acceder a los datos
     de un evento usaremos '$event' en el manejador. -->

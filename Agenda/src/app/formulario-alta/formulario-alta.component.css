@@ -1,0 +1,14 @@
+
+input.ng-touched.ng-invalid {
+  border: 2px solid red;
+}
+
+/* Con las clases 'ng-touched' y 'ng-valid' seleccionamos aquellos elementos que
+   se han visitado y además se han informado correctamente. */
+input.ng-touched.ng-valid {
+  border: 2px solid green;
+}
+
+.mensaje-error {
+  color: red;
+}
