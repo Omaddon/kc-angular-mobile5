@@ -9,68 +9,104 @@
        reference variable, al cual asignamos como valor la propia directiva 'ngModel'. -->
 
   <!-- Nombre del contacto -->
-  <label for="inputNombre">Nombre</label>
-  <input
-    id="inputNombre"
-    placeholder="Ej: Elon"
-    type="text"
-    ngModel
-    name="nombre"
-    #nombreRef="ngModel"
-    required>
-
-  <!-- Con la directiva 'ngIf' escribimos o no un elemento en el DOM en función de si la
-       expresión indicada es evaluada como true o false. -->
-  <div *ngIf="nombreRef.touched && nombreRef.invalid" class="mensaje-error">
-    El nombre es un dato obligatorio.
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="inputNombre">Nombre</label>
+      <input
+        class="u-full-width"
+        id="inputNombre"
+        placeholder="Ej: Elon"
+        type="text"
+        ngModel
+        name="nombre"
+        #nombreRef="ngModel"
+        required>
+      <!-- Con la directiva 'ngIf' escribimos o no un elemento en el DOM en función de si la
+          expresión indicada es evaluada como true o false. -->
+      <div *ngIf="nombreRef.touched && nombreRef.invalid" class="mensaje-error">
+        El nombre es un dato obligatorio.
+      </div>
+    </div>
   </div>
 
+
  <!-- Apellidos del contacto -->
- <label for="inputApellidos">Apellidos</label>
-  <input
-    id="inputApellidos"
-    placeholder="Ej: Musk"
-    type="text"
-    ngModel
-    name="apellidos">
+ <div class="row">
+   <div class="offset-by-three six columns">
+    <label for="inputApellidos">Apellidos</label>
+      <input
+        class="u-full-width"
+        id="inputApellidos"
+        placeholder="Ej: Musk"
+        type="text"
+        ngModel
+        name="apellidos">
+   </div>
+ </div>
 
  <!-- Móvil del contacto -->
- <label for="inputMovil">Móvil</label>
-  <input
-    id="inputMovil"
-    placeholder="Ej: 555 000 777"
-    type="text"
-    ngModel
-    name="movil">
+ <div class="row">
+   <div class="offset-by-three six columns">
+    <label for="inputMovil">Móvil</label>
+      <input
+        class="u-full-width"
+        id="inputMovil"
+        placeholder="Ej: 555 000 777"
+        type="text"
+        ngModel
+        name="movil">
+   </div>
+ </div>
 
  <!-- Email del contacto -->
- <label for="inputEmail">Email</label>
-  <input
-    id="inputEmail"
-    placeholder="Ej: correo@prueba.com"
-    type="email"
-    ngModel
-    name="email">
+ <div class="row">
+   <div class="offset-by-three six columns">
+    <label for="inputEmail">Email</label>
+      <input
+        class="u-full-width"
+        id="inputEmail"
+        placeholder="Ej: correo@prueba.com"
+        type="email"
+        ngModel
+        name="email">
+   </div>
+ </div>
 
  <!-- Facebook del contacto -->
- <label for="inputFacebook">Facebook</label>
-  <input
-    id="inputFacebook"
-    placeholder="Ej: elon.musk"
-    type="text"
-    ngModel
-    name="facebook">
+ <div class="row">
+   <div class="offset-by-three six columns">
+    <label for="inputFacebook">Facebook</label>
+      <input
+        class="u-full-width"
+        id="inputFacebook"
+        placeholder="Ej: elon.musk"
+        type="text"
+        ngModel
+        name="facebook">
+   </div>
+ </div>
 
  <!-- Twitter del contacto -->
- <label for="inputTwitter">Twitter</label>
-  <input
-    id="inputTwitter"
-    placeholder="Ej: @elonmusk"
-    type="text"
-    ngModel
-    name="twitter">
+ <div class="row">
+   <div class="offset-by-three six columns">
+    <label for="inputTwitter">Twitter</label>
+      <input
+        class="u-full-width"
+        id="inputTwitter"
+        placeholder="Ej: @elonmusk"
+        type="text"
+        ngModel
+        name="twitter">
+   </div>
+ </div>
 
-  <!--  -->
-  <button type="submit" [disabled]="formularioContacto.invalid">Guardar contacto</button>
+  <!-- Estará deshabilitado si la condición es true -->
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <button type="submit" [disabled]="formularioContacto.invalid" class="u-full-width button-primary">
+        Guardar contacto
+      </button>
+    </div>
+  </div>
 
 </form>
