@@ -10,6 +10,7 @@ import { FormularioAltaComponent } from './formulario-alta/formulario-alta.compo
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
+import { OrdenContactosPipe } from './orden-contactos.pipe';
 
 @NgModule({
   // Indicamos todos los componentes, pipes y directivas de mi app.
@@ -18,7 +19,8 @@ import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.componen
     ListaContactosComponent,
     FormularioAltaComponent,
     MisContactosComponent,
-    NuevoContactoComponent
+    NuevoContactoComponent,
+    OrdenContactosPipe
   ],
   // Indicamos los módulos de los cuáles dependemos.
   imports: [

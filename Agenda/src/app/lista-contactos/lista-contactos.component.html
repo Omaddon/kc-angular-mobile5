@@ -6,8 +6,8 @@
   -->
 
 <ul>
-  <!-- Con la directiva *ngFor iteramos sobre una colección. Relica. -->
-  <li *ngFor="let contacto of datos">
+  <!-- Con la directiva *ngFor iteramos sobre una colección. Replica. -->
+  <li *ngFor="let contacto of datos | ordenContactos">
 
     <!-- {{ contacto.nombre }} {{ contacto.apellidos }} -->
     {{ obtenerNombreCompleto(contacto) }}
