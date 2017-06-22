@@ -1,0 +1,40 @@
+{
+  "contactos": [
+    {
+      "nombre": "Tim",
+      "apellidos": "Cook",
+      "movil": "555 333 777",
+      "email": "tim.cook@apple.com",
+      "facebook": "tim.cook",
+      "twitter": "@timcook",
+      "id": 1
+    },
+    {
+      "nombre": "Bill",
+      "apellidos": "Gates",
+      "movil": "888 999 000",
+      "email": "bill.gates@microsoft.com",
+      "facebook": "bill.gates",
+      "twitter": "@billgates",
+      "id": 2
+    },
+    {
+      "nombre": "Elon",
+      "apellidos": "Musk",
+      "movil": "111 222 333",
+      "email": "elon.musk@tesla.com",
+      "facebook": "elon.musk",
+      "twitter": "@elonmusk",
+      "id": 3
+    },
+    {
+      "nombre": "Steve",
+      "apellidos": "Wozniak",
+      "movil": "111 333 555",
+      "email": "woz@exapple.com",
+      "facebook": "steve.woz",
+      "twitter": "@stevewoz",
+      "id": 4
+    }
+  ]
+}

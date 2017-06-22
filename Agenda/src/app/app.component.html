@@ -8,8 +8,11 @@
   </formulario-alta>
 
   <!-- Para enlazar datos en un componente hijo, bsata con indicar el atributo que se ha expuesto. Si queremos evaluar una expresión previamente a su asignación como valor del atributo, envolvemos con corchetes el atributo. -->
+
+  <!-- Cuando trabajamos con 'Observables' en los templates, podemos ayudarnos del Pipe 'async'.
+  Este Pipe lo que hace es gestionar la suscripción y desuscripción del 'Observable' en cuestión. -->
   <lista-contactos
-    [datos]="contactos"
+    [datos]="contactos$ | async"
     (clickEnEliminar)="eliminarContacto($event)">
   </lista-contactos>
 </div>

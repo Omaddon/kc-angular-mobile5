@@ -19,6 +19,13 @@ export class ListaContactosComponent {
     this.clickEnEliminar.emit(dato);
   }
 
+  obtenerNombreCompleto(dato: Contacto): string {
+    return `${dato.nombre} ${dato.apellidos}`;
+  }
+
+//
+// NO USADO, tan solo para primeras pruebas
+//
   esGatesWozniak(contacto) {
     return contacto.indexOf('Gates') > -1 || contacto.indexOf('Wozniak') > -1;
   }
