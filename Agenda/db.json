@@ -35,6 +35,24 @@
       "facebook": "steve.woz",
       "twitter": "@stevewoz",
       "id": 4
+    },
+    {
+      "nombre": "Espinete",
+      "apellidos": "",
+      "movil": "",
+      "email": "",
+      "facebook": "",
+      "twitter": "",
+      "id": 5
+    },
+    {
+      "nombre": "Bob Esponja",
+      "apellidos": "",
+      "movil": "",
+      "email": "",
+      "facebook": "",
+      "twitter": "",
+      "id": 6
     }
   ]
 }
