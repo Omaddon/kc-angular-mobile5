@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
@@ -33,7 +33,7 @@ export class ProductService {
     | Red Path                                                         |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
     | Pide al servidor que te retorne los productos filtrados por      |
-    | texto y/ por categoría.                                          |
+    | texto y/o por categoría.                                          |
     |                                                                  |
     | En la documentación de 'JSON Server' tienes detallado cómo       |
     | filtrar datos en tus peticiones, pero te ayudo igualmente. La    |
@@ -59,9 +59,23 @@ export class ProductService {
     |       state=x (siendo x el estado)                               |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+    const myParams = new URLSearchParams();
+
+    if (filter) {
+      if (filter.text) {
+        myParams.set('q', filter.text);
+      }
+      if ((filter.category) && (filter.category !== '0')) {
+        myParams.set('category.id', filter.category);
+      }
+    }
+
+    const options = new RequestOptions({params: myParams});
+
     return this._http
-      .get(`${this._backendUri}/products?_sort=publishedDate&_order=DESC`)
+      .get(`${this._backendUri}/products?_sort=publishedDate&_order=DESC`, options)
       .map((data: Response): Product[] => Product.fromJsonToList(data.json()));
+
   }
 
   getProduct(productId: number): Observable<Product> {

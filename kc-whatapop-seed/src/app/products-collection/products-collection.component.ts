@@ -48,7 +48,6 @@ export class ProductsCollectionComponent implements OnDestroy, OnInit {
   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   mostrarProducto(producto) {
-    // Cambios
     this._router.navigate(['products', producto.id]);
   }
 
