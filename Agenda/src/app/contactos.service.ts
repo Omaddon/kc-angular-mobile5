@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Contacto } from './contacto';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import "rxjs/add/operator/map";
+import 'rxjs/add/operator/map';
 import { environment } from '../environments/environment';
 
 // Un servicio es una clase decorada con 'Injectable'.
@@ -32,7 +32,7 @@ export class ContactosService {
     // return this._contactos;
   }
 
-  eliminarContacto(contacto: string):void {
+  eliminarContacto(contacto: string): void {
     // let posicion = this._contactos.indexOf(contacto);
     // this._contactos.splice(posicion, 1);
 

@@ -59,6 +59,7 @@ export class ProductService {
     |       state=x (siendo x el estado)                               |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+    console.log(filter);
 
     const myParams = new URLSearchParams();
 
