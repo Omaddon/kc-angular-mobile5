@@ -59,6 +59,7 @@ export class ProductService {
     |       state=x (siendo x el estado)                               |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+
     const myParams = new URLSearchParams();
 
     if (filter) {
@@ -67,6 +68,10 @@ export class ProductService {
       }
       if ((filter.category) && (filter.category !== '0')) {
         myParams.set('category.id', filter.category);
+      }
+      if (filter.state) {
+        console.log('wwww');
+        myParams.set('state', filter.state);
       }
     }
 
