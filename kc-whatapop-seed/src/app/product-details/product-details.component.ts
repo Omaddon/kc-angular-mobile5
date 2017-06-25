@@ -1,10 +1,10 @@
+import { Product } from './../product';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
 import { ConfirmationService } from 'primeng/primeng';
 
-import { Product } from '../product';
 import { ProductService } from '../product.service';
 
 @Component({

@@ -1,0 +1,6 @@
+<button class="button expanded"
+  (click)="clickMeGusta()"
+  [class.success]="likes === 'like'"
+  [class.secondary]="likes === 'dislike' || 'undefined'">
+      Me gusta
+</button>

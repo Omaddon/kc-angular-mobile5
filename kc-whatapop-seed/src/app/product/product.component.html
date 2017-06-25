@@ -1,5 +1,6 @@
 <div *ngIf="data">
-  <img [src]="data.photo" class="thumbnail" />
+  <img [src]="data.photo" class="thumbnail"
+    (click)="notificarDetalle()" />
 
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
   | Green Path                                                       |

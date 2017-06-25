@@ -1,6 +1,9 @@
 <div class="row" *ngIf="product">
   <div class="medium-4 columns">
     <img [src]="product.photo" class="thumbnail" />
+    <app-like-button
+      [product]="product">
+    </app-like-button>
   </div>
   <div class="medium-8 columns">
     <h3>{{ product.name }}</h3>
