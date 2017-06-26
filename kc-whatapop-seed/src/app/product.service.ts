@@ -69,8 +69,13 @@ export class ProductService {
         myParams.set('category.id', filter.category);
       }
       if (filter.state) {
-        console.log('wwww');
         myParams.set('state', filter.state);
+      }
+      if ((filter.precioMin) && (filter.precioMin !== '')) {
+        myParams.set('price_gte', filter.precioMin);
+      }
+      if ((filter.precioMax) && (filter.precioMax !== '')) {
+        myParams.set('price_lte', filter.precioMax);
       }
     }
 

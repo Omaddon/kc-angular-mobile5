@@ -1,15 +1,5 @@
 export class Contacto {
 
-  constructor(
-    public id: number,
-    public nombre: string,
-    public apellidos?: string,
-    public movil?: string,
-    public email?: string,
-    public facebook?: string,
-    public twitter?: string
-  ) {}
-
   static nuevoDesdeJSON(json: any): Contacto {
     return new Contacto(
       json.id,
@@ -29,4 +19,13 @@ export class Contacto {
     });
   }
 
+  constructor(
+    public id: number,
+    public nombre: string,
+    public apellidos?: string,
+    public movil?: string,
+    public email?: string,
+    public facebook?: string,
+    public twitter?: string
+  ) {}
 }

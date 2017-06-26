@@ -13,7 +13,9 @@
 
     <app-product
       *ngFor="let product of products"
+
       [data]="product"
+
       (clickOnDetalle)="mostrarProducto($event)"
       class="column">
     </app-product>
