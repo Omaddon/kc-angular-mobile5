@@ -15,6 +15,7 @@ import { ProductService } from '../product.service';
 export class ProductsCollectionComponent implements OnDestroy, OnInit {
 
   products: Product[];
+  filtro: ProductFilter;
   private _filterStream$: Subject<ProductFilter> = new Subject;
 
   constructor(
@@ -34,6 +35,19 @@ export class ProductsCollectionComponent implements OnDestroy, OnInit {
   }
 
   filterCollection(filter: ProductFilter): void {
+
+    if (filter) {
+      this.filtro = filter;
+    } else {
+      const nuevoFiltro: ProductFilter = {};
+
+      nuevoFiltro.precioMin = '0';
+      nuevoFiltro.precioMax = '9999999';
+
+      this.filtro = nuevoFiltro;
+
+    }
+
     this._filterStream$.next(filter);
   }
 

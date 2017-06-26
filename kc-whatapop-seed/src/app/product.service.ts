@@ -71,12 +71,12 @@ export class ProductService {
       if (filter.state) {
         myParams.set('state', filter.state);
       }
-      if ((filter.precioMin) && (filter.precioMin !== '')) {
-        myParams.set('price_gte', filter.precioMin);
-      }
-      if ((filter.precioMax) && (filter.precioMax !== '')) {
-        myParams.set('price_lte', filter.precioMax);
-      }
+      // if ((filter.precioMin) && (filter.precioMin !== '')) {
+      //   myParams.set('price_gte', filter.precioMin);
+      // }
+      // if ((filter.precioMax) && (filter.precioMax !== '')) {
+      //   myParams.set('price_lte', filter.precioMax);
+      // }
     }
 
     const options = new RequestOptions({params: myParams});
