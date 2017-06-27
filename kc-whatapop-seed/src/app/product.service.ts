@@ -68,7 +68,7 @@ export class ProductService {
       if ((filter.category) && (filter.category !== '0')) {
         myParams.set('category.id', filter.category);
       }
-      if (filter.state) {
+      if ((filter.state) && (filter.state !== '-')) {
         myParams.set('state', filter.state);
       }
       // if ((filter.precioMin) && (filter.precioMin !== '')) {

@@ -7,25 +7,25 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PricePipe implements PipeTransform {
 
-  transform(producto: Product[], min?: String, max?: String): Product[] {
+  transform(productos: Product[], min?: String, max?: String): Product[] {
 
     const resultado: Product[] = [];
 
-    for (let i = 0; i < producto.length; i++) {
+    for (let i = 0; i < productos.length; i++) {
       if ((min) && (!max)) {
-        if (+producto[i].price >= +min) {
-          resultado.push(producto[i]);
+        if (+productos[i].price >= +min) {
+          resultado.push(productos[i]);
         }
       } else if ((!min) && (max)) {
-        if (+producto[i].price <= +max) {
-          resultado.push(producto[i]);
+        if (+productos[i].price <= +max) {
+          resultado.push(productos[i]);
         }
       } else if ((min) && (max)) {
-        if ((+producto[i].price >= +min) && (+producto[i].price <= +max)) {
-          resultado.push(producto[i]);
+        if ((+productos[i].price >= +min) && (+productos[i].price <= +max)) {
+          resultado.push(productos[i]);
         }
       } else {
-        resultado.push(producto[i]);
+        resultado.push(productos[i]);
       }
     }
     return resultado;

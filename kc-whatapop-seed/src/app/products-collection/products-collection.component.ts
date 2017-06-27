@@ -43,6 +43,7 @@ export class ProductsCollectionComponent implements OnDestroy, OnInit {
 
       nuevoFiltro.precioMin = '0';
       nuevoFiltro.precioMax = '9999999';
+      nuevoFiltro.state = '-';
 
       this.filtro = nuevoFiltro;
 

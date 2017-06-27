@@ -12,7 +12,8 @@
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
     <app-product
-      *ngFor="let product of (products | priceFilter:filtro.precioMin:filtro.precioMax)"
+      *ngFor="let product of (products | priceFilter:filtro.precioMin:filtro.precioMax
+                                       | stateFilter:filtro.state)"
 
       [data]="product"
 

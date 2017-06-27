@@ -24,6 +24,7 @@ import { UserService } from './user.service';
 import { PublicationDatePipe } from './publication-date.pipe';
 import { LikeButtonComponent } from './like-button/like-button.component';
 import { PricePipe } from './price.pipe';
+import { StatePipe } from './state.pipe';
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 | Blue Path                                                        |
@@ -43,7 +44,8 @@ import { PricePipe } from './price.pipe';
     UserProfileComponent,
     PublicationDatePipe,
     LikeButtonComponent,
-    PricePipe
+    PricePipe,
+    StatePipe
   ],
   imports: [
     BrowserModule,
