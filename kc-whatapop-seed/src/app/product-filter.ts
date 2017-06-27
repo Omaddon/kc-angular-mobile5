@@ -5,4 +5,5 @@ export interface ProductFilter {
     precioMin?: string;
     precioMax?: string;
     sort?: string;
+    seller?: string;
 }

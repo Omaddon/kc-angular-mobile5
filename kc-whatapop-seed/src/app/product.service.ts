@@ -1,3 +1,4 @@
+import { User } from './user';
 import { Inject, Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -98,6 +99,12 @@ export class ProductService {
     return this._http
       .get(`${this._backendUri}/products/${productId}`)
       .map((data: Response): Product => Product.fromJson(data.json()));
+  }
+
+  getSeller(sellerId: number): Observable<User> {
+    return this._http
+      .get(`${this._backendUri}/products/${sellerId}`)
+      .map((data: Response): User => User.fromJson(data.json()));
   }
 
   buyProduct(productId: number): Observable<Product> {

@@ -20,11 +20,13 @@ import { ProductsCollectionComponent } from './products-collection/products-coll
 import { SoldProductsResolveService } from './sold-products-resolve.service';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserService } from './user.service';
+import { SellerResolveService } from './seller-resolve.service';
 
 import { PublicationDatePipe } from './publication-date.pipe';
 import { LikeButtonComponent } from './like-button/like-button.component';
 import { PricePipe } from './price.pipe';
 import { StatePipe } from './state.pipe';
+import { SellerComponent } from './seller/seller.component';
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 | Blue Path                                                        |
@@ -45,7 +47,8 @@ import { StatePipe } from './state.pipe';
     PublicationDatePipe,
     LikeButtonComponent,
     PricePipe,
-    StatePipe
+    StatePipe,
+    SellerComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import { StatePipe } from './state.pipe';
     ProductDetailsResolveService,
     ProductService,
     SoldProductsResolveService,
-    UserService
+    UserService,
+    SellerResolveService
   ],
   bootstrap: [AppComponent]
 })

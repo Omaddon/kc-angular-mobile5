@@ -59,4 +59,8 @@ export class ProductDetailsComponent implements OnDestroy, OnInit {
     window.history.back();
   }
 
+  clickSeller(sellerId: string) {
+    this._router.navigate(['products/seller', sellerId]);
+  }
+
 }

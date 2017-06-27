@@ -6,6 +6,8 @@ import { ProductDetailsResolveService } from './product-details-resolve.service'
 import { ProductResetComponent } from './product-reset/product-reset.component';
 import { ProductsCollectionComponent } from './products-collection/products-collection.component';
 import { SoldProductsResolveService } from './sold-products-resolve.service';
+import { SellerResolveService } from './seller-resolve.service';
+import { SellerComponent } from './seller/seller.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,13 @@ const routes: Routes = [
     component: ProductResetComponent,
     resolve: {
       products: SoldProductsResolveService
+    }
+  },
+  {
+    path: 'products/seller/:sellerId',
+    component: SellerComponent,
+    resolve: {
+      products: SellerResolveService
     }
   },
   {

@@ -1,0 +1,19 @@
+<div class="row" *ngIf="seller">
+  <div class="medium-4 columns">
+    <img [src]="seller.avatar" class="thumbnail"/>
+    <app-like-button
+      [product]="seller">
+    </app-like-button>
+  </div>
+  <div class="medium-8 columns">
+    <h3>{{ seller.name }}</h3>
+    <p>
+
+    <button (click)="goBack()" class="warning button expanded">Volver</button>
+  </div>
+
+  <!-- Confirmation alert -->
+  <!--
+  <p-confirmDialog header="Confirmación de compra" width="625" #cd></p-confirmDialog>
+  -->
+</div>

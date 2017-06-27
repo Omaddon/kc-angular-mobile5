@@ -4,3 +4,11 @@
   padding-top: 28px;
   margin-bottom: 20px;
 }
+
+#seller {
+  color: #2199e8;
+}
+
+#seller:hover {
+  cursor: pointer;
+}
