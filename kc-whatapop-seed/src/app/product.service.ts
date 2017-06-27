@@ -62,6 +62,13 @@ export class ProductService {
     const myParams = new URLSearchParams();
 
     if (filter) {
+      if (typeof(filter.state) === 'undefined') {
+          filter.state = '-';
+      }
+      if (typeof(filter.sort) === 'undefined') {
+        filter.sort = 'fecha';
+      }
+
       if (filter.text) {
         myParams.set('q', filter.text);
       }
@@ -71,18 +78,18 @@ export class ProductService {
       if ((filter.state) && (filter.state !== '-')) {
         myParams.set('state', filter.state);
       }
-      // if ((filter.precioMin) && (filter.precioMin !== '')) {
-      //   myParams.set('price_gte', filter.precioMin);
-      // }
-      // if ((filter.precioMax) && (filter.precioMax !== '')) {
-      //   myParams.set('price_lte', filter.precioMax);
-      // }
+      if ((filter.sort) && (filter.sort !== 'fecha')) {
+        myParams.set('_sort', filter.sort);
+      } else if (filter.sort === 'fecha') {
+        myParams.set('_sort', 'publishedDate');
+        myParams.set('_order', 'DESC');
+      }
     }
 
     const options = new RequestOptions({params: myParams});
 
     return this._http
-      .get(`${this._backendUri}/products?_sort=publishedDate&_order=DESC`, options)
+      .get(`${this._backendUri}/products`, options)
       .map((data: Response): Product[] => Product.fromJsonToList(data.json()));
 
   }

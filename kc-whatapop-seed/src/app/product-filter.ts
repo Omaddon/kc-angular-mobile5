@@ -4,4 +4,5 @@ export interface ProductFilter {
     state?: string;
     precioMin?: string;
     precioMax?: string;
+    sort?: string;
 }

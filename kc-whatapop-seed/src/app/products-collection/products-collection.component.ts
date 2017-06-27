@@ -48,8 +48,7 @@ export class ProductsCollectionComponent implements OnDestroy, OnInit {
       this.filtro = nuevoFiltro;
 
     }
-
-    this._filterStream$.next(filter);
+    this._filterStream$.next(this.filtro);
   }
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|

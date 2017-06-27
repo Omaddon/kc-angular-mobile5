@@ -1,27 +1,41 @@
 <div>
   <div class="row">
     <div class="small-6 medium-2 large-3 columns">
-      <input [(ngModel)]="productFilter.text" type="text" placeholder="Pe. Uncharted">
+      <label for="buscar">Buscar por:</label>
+      <input [(ngModel)]="productFilter.text" type="text" placeholder="Pe. Uncharted" id="buscar">
     </div>
 
     <div class="small-6 medium-2 large-3 columns">
-      <input [(ngModel)]="productFilter.precioMin" type="text" placeholder="€ min">
+      <label for="min">€ min:</label>
+      <input [(ngModel)]="productFilter.precioMin" type="text" placeholder="€ min" id="min">
     </div>
     <div class="small-6 medium-2 large-3 columns">
-      <input [(ngModel)]="productFilter.precioMax" type="text" placeholder="€ max">
+      <label for="max">€ max:</label>
+      <input [(ngModel)]="productFilter.precioMax" type="text" placeholder="€ max" id="max">
     </div>
 
     <div class="small-6 medium-2 large-3 columns">
-      <select [(ngModel)]="productFilter.category">
+      <label for="filter">Filtrar por:</label>
+      <select [(ngModel)]="productFilter.category" id="filter">
         <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
       </select>
     </div>
 
     <div class="small-6 medium-2 large-3 columns">
-      <select [(ngModel)]="productFilter.state">
+      <label for="sold">Vendido:</label>
+      <select [(ngModel)]="productFilter.state" id="sold">
         <option value="-">-</option>
         <option value="selling">Selling</option>
         <option value="sold">Sold</option>
+      </select>
+    </div>
+
+    <div class="small-6 medium-2 large-3 columns">
+      <label for="sort">Ordenar por:</label>
+      <select [(ngModel)]="productFilter.sort" id="sort">
+        <option value="fecha">Fecha</option>
+        <option value="name">Alfabéticamente</option>
+        <option value="price">Precio</option>
       </select>
     </div>
 
