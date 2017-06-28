@@ -7,11 +7,11 @@ import { Injectable } from '@angular/core';
 import { Product } from './product';
 
 @Injectable()
-export class SellerResolveService implements Resolve<User> {
+export class SellerResolveService implements Resolve<Product[]> {
 
   constructor(private _productService: ProductService) { }
 
-  resolve(route: ActivatedRouteSnapshot): Observable<User> {
-    return this._productService.getSeller(+route.params['sellerId']);
+  resolve(route: ActivatedRouteSnapshot): Observable<Product[]> {
+    return this._productService.getSellerProducts(route.params['sellerId']);
   }
 }

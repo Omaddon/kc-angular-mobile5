@@ -1,19 +1,21 @@
-<div class="row" *ngIf="seller">
-  <div class="medium-4 columns">
-    <img [src]="seller.avatar" class="thumbnail"/>
-    <app-like-button
-      [product]="seller">
-    </app-like-button>
+<div class="row">
+  <div class="small-12 large-12 columns">
+    <app-product-filter (onSearch)="filterCollection($event)"></app-product-filter>
   </div>
-  <div class="medium-8 columns">
-    <h3>{{ seller.name }}</h3>
-    <p>
+  <div *ngIf="products?.length > 0" class="small-up-2 medium-up-4 large-up-6">
 
-    <button (click)="goBack()" class="warning button expanded">Volver</button>
+    <app-product
+      *ngFor="let product of (products | priceFilter:filtro.precioMin:filtro.precioMax
+                                       | stateFilter:filtro.state)"
+      [data]="product"
+      (clickOnDetalle)="mostrarProducto($event)"
+      class="column">
+    </app-product>
   </div>
 
-  <!-- Confirmation alert -->
-  <!--
-  <p-confirmDialog header="Confirmación de compra" width="625" #cd></p-confirmDialog>
-  -->
+  <div *ngIf="products?.length === 0" class="text-center">
+    <span>No se han encontrado productos.</span>
+  </div>
+
+  <button (click)="goBack()" class="warning button expanded">Volver</button>
 </div>

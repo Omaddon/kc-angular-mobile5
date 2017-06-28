@@ -1,10 +1,11 @@
-import { Product } from './../product';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
 import { ConfirmationService } from 'primeng/primeng';
 
+import { User } from './../user';
+import { Product } from './../product';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -59,8 +60,8 @@ export class ProductDetailsComponent implements OnDestroy, OnInit {
     window.history.back();
   }
 
-  clickSeller(sellerId: string) {
-    this._router.navigate(['products/seller', sellerId]);
+  clickSeller(seller: User) {
+    this._router.navigate(['products/seller', seller.id]);
   }
 
 }

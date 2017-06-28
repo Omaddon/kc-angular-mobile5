@@ -85,6 +85,9 @@ export class ProductService {
         myParams.set('_sort', 'publishedDate');
         myParams.set('_order', 'DESC');
       }
+      if (filter.seller) {
+        myParams.set('seller.id', filter.seller);
+      }
     }
 
     const options = new RequestOptions({params: myParams});
@@ -101,10 +104,15 @@ export class ProductService {
       .map((data: Response): Product => Product.fromJson(data.json()));
   }
 
-  getSeller(sellerId: number): Observable<User> {
+  getSellerProducts(sellerId: string): Observable<Product[]> {
+    const urlParams = new URLSearchParams();
+    urlParams.set('seller.id', sellerId);
+
+    const options = new RequestOptions({params: urlParams});
+
     return this._http
-      .get(`${this._backendUri}/products/${sellerId}`)
-      .map((data: Response): User => User.fromJson(data.json()));
+      .get(`${this._backendUri}/products`, options)
+      .map((data: Response): Product[] => Product.fromJsonToList(data.json()));
   }
 
   buyProduct(productId: number): Observable<Product> {
