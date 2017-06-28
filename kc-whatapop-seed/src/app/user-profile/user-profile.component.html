@@ -1,12 +1,13 @@
 <div class="user-profile">
   <div class="row">
     <div class="small-4 small-offset-4 medium-4 medium-offset-4 large-2 large-offset-5 columns">
-      <img [src]="getImageSrc()" class="thumbnail" />
+      <img [src]="getImageSrc()" class="thumbnail" (click)="clickSeller(user)" id="seller"/>
     </div>
   </div>
   <div>
     <p class="text-center">
-      <strong>{{ user?.name }}</strong> | {{ user?.nick }}
+      <strong>{{ user?.name }}</strong> |
+      <span (click)="clickSeller(user)" id="seller">{{ user?.nick }}</span>
     </p>
   </div>
 </div>

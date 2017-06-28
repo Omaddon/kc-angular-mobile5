@@ -1,10 +1,4 @@
-<div class="row" *ngIf="user">
-  <div class="medium-4 columns">
-    <img [src]="user.avatar" class="thumbnail" width="175"/>
-    <h3>{{ user.nick }}</h3>
-  </div>
-</div>
-
+<app-user-profile [userId]="user.id"></app-user-profile>
 
 <div class="row">
   <div class="small-12 large-12 columns">

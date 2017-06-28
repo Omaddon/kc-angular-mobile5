@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { Subscription } from 'rxjs/Rx';
 
@@ -16,7 +17,10 @@ export class UserProfileComponent implements OnChanges, OnDestroy {
   user: User;
   private _userSubscription: Subscription;
 
-  constructor(private _userService: UserService) { }
+  constructor(
+    private _userService: UserService,
+    private _router: Router
+  ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['userId'] && changes['userId']['currentValue']) {
@@ -34,6 +38,10 @@ export class UserProfileComponent implements OnChanges, OnDestroy {
 
   getImageSrc(): string {
     return this.user ? this.user.avatar : '';
+  }
+
+  clickSeller(seller: User) {
+    this._router.navigate(['products/seller', seller.id]);
   }
 
 }
